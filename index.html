@@ -117,6 +117,39 @@
             background: #1a5bbf;
         }
 
+        /* Image Compressor Tool Styles */
+        #compression-tool {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #compression-tool input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        #compression-tool input[type="range"] {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #compression-tool button {
+            background: #2575fc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #compression-tool button:hover {
+            background: #1a5bbf;
+        }
+
+        #output img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
         /* Footer */
         footer {
             margin-top: 30px;
@@ -164,19 +197,19 @@
                 <i class="fas fa-image"></i>
                 <h3>Image Compressor</h3>
                 <p>Compress and optimize images for better performance.</p>
-                <a href="image-compress.html" target="_blank">Use Tool</a>
+                <a href="#compression-tool">Use Tool</a>
             </div>
             <div class="tool-card">
                 <i class="fas fa-file-image"></i>
                 <h3>Image Converter</h3>
                 <p>Convert images to different formats (JPG, PNG, WEBP, etc.).</p>
-                <a href="image-converter.html" target="_blank">Use Tool</a>
+                <a href="#coming-soon">Use Tool</a>
             </div>
             <div class="tool-card">
                 <i class="fas fa-crop"></i>
                 <h3>Image Resizer</h3>
                 <p>Resize images to specific dimensions effortlessly.</p>
-                <a href="image-resizer.html" target="_blank">Use Tool</a>
+                <a href="#coming-soon">Use Tool</a>
             </div>
 
             <!-- PDF Tools -->
@@ -184,37 +217,97 @@
                 <i class="fas fa-file-pdf"></i>
                 <h3>PDF Compressor</h3>
                 <p>Reduce PDF file size without losing quality.</p>
-                <a href="pdf-compressor.html" target="_blank">Use Tool</a>
+                <a href="#coming-soon">Use Tool</a>
             </div>
             <div class="tool-card">
                 <i class="fas fa-file-export"></i>
                 <h3>PDF to Word</h3>
                 <p>Convert PDF files to editable Word documents.</p>
-                <a href="pdf-to-word.html" target="_blank">Use Tool</a>
+                <a href="#coming-soon">Use Tool</a>
             </div>
             <div class="tool-card">
                 <i class="fas fa-file-import"></i>
                 <h3>Word to PDF</h3>
                 <p>Convert Word documents to PDF files.</p>
-                <a href="word-to-pdf.html" target="_blank">Use Tool</a>
+                <a href="#coming-soon">Use Tool</a>
             </div>
             <div class="tool-card">
                 <i class="fas fa-file-alt"></i>
                 <h3>PDF Editor</h3>
                 <p>Edit PDF files with ease.</p>
-                <a href="pdf-editor.html" target="_blank">Use Tool</a>
+                <a href="#coming-soon">Use Tool</a>
             </div>
             <div class="tool-card">
                 <i class="fas fa-file-archive"></i>
                 <h3>PDF Splitter</h3>
                 <p>Split PDF files into multiple documents.</p>
-                <a href="pdf-splitter.html" target="_blank">Use Tool</a>
+                <a href="#coming-soon">Use Tool</a>
             </div>
         </div>
+
+        <!-- Image Compressor Tool -->
+        <section id="compression-tool">
+            <h2>Image Compressor</h2>
+            <input type="file" id="image-input" accept="image/*">
+            <label for="compression-level">Compression Level: <span id="compression-value">0.5</span></label>
+            <input type="range" id="compression-level" min="0" max="1" step="0.1" value="0.5">
+            <button id="compress-btn">Compress Image</button>
+            <div id="output"></div>
+        </section>
+
+        <!-- Coming Soon Section -->
+        <section id="coming-soon" style="text-align: center; margin-top: 50px;">
+            <h2>More Tools Coming Soon!</h2>
+            <p>We're working hard to bring you more amazing tools. Stay tuned!</p>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2023 <a href="https://arksearchengineark.com" target="_blank">arksearchengineark.com</a>. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for Image Compression Tool
+        document.getElementById('compression-level').addEventListener('input', function() {
+            document.getElementById('compression-value').textContent = this.value;
+        });
+
+        document.getElementById('compress-btn').addEventListener('click', function() {
+            const fileInput = document.getElementById('image-input');
+            const compressionLevel = parseFloat(document.getElementById('compression-level').value);
+
+            if (fileInput.files.length === 0) {
+                alert('Please select an image to compress.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = new Image();
+                img.src = e.target.result;
+
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    ctx.drawImage(img, 0, 0);
+
+                    canvas.toBlob(function(blob) {
+                        const compressedImg = document.createElement('img');
+                        compressedImg.src = URL.createObjectURL(blob);
+                        document.getElementById('output').innerHTML = '';
+                        document.getElementById('output').appendChild(compressedImg);
+                    }, 'image/jpeg', compressionLevel);
+                };
+            };
+
+            reader.readAsDataURL(file);
+        });
+    </script>
 </body>
 </html>

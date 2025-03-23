@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a wide range of image and PDF tools at Ark Search Engine. Optimize, compress, convert, and edit files effortlessly.">
+    <meta name="keywords" content="image tools, PDF tools, compress images, convert PDF, edit PDF, arksearchengineark.com">
+    <meta name="author" content="Ark Search Engine">
+    <title>Ark Search Engine - Image & PDF Tools</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        header a {
+            color: #ffdd57;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        main {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 1200px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .tool-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffdd57;
+        }
+
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .tool-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #2575fc;
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .tool-card a:hover {
+            background: #1a5bbf;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ark Search Engine</h1>
+        <p>Your one-stop solution for image and PDF tools. Powered by <a href="https://arksearchengineark.com" target="_blank">arksearchengineark.com</a>.</p>
+    </header>
+
+    <main>
+        <h2>Explore Our Tools</h2>
+        <div class="tools-grid">
+            <!-- Image Tools -->
+            <div class="tool-card">
+                <i class="fas fa-image"></i>
+                <h3>Image Compressor</h3>
+                <p>Compress and optimize images for better performance.</p>
+                <a href="image-compress.html" target="_blank">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-image"></i>
+                <h3>Image Converter</h3>
+                <p>Convert images to different formats (JPG, PNG, WEBP, etc.).</p>
+                <a href="image-converter.html" target="_blank">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-crop"></i>
+                <h3>Image Resizer</h3>
+                <p>Resize images to specific dimensions effortlessly.</p>
+                <a href="image-resizer.html" target="_blank">Use Tool</a>
+            </div>
+
+            <!-- PDF Tools -->
+            <div class="tool-card">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF Compressor</h3>
+                <p>Reduce PDF file size without losing quality.</p>
+                <a href="pdf-compressor.html" target="_blank">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-export"></i>
+                <h3>PDF to Word</h3>
+                <p>Convert PDF files to editable Word documents.</p>
+                <a href="pdf-to-word.html" target="_blank">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-import"></i>
+                <h3>Word to PDF</h3>
+                <p>Convert Word documents to PDF files.</p>
+                <a href="word-to-pdf.html" target="_blank">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>PDF Editor</h3>
+                <p>Edit PDF files with ease.</p>
+                <a href="pdf-editor.html" target="_blank">Use Tool</a>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-archive"></i>
+                <h3>PDF Splitter</h3>
+                <p>Split PDF files into multiple documents.</p>
+                <a href="pdf-splitter.html" target="_blank">Use Tool</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 <a href="https://arksearchengineark.com" target="_blank">arksearchengineark.com</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
